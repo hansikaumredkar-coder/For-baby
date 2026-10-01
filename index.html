@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Baal ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sparkles" aria-hidden="true"></div>
+  <div class="hearts" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="mini-label">a little surprise for my favourite person</div>
+      <h1>Happy Boyfriend's Day,<br><span>my Baal ♡</span></h1>
+      <p class="subtitle">made with a ridiculous amount of love by your Mommy 🎀</p>
+      <button class="primary-btn" onclick="openSurprise()">Open your surprise ✨</button>
+      <div class="scroll-note">↓ there is something waiting for you ↓</div>
+    </section>
+
+    <section class="surprise hidden" id="surprise">
+      <div class="section-tag">01 · my favourite human</div>
+      <h2>It's you. It has always been you. 🫶🏻</h2>
+
+      <div class="photo-grid">
+        <figure class="photo-card tilt-left">
+          <img src="baal-photo-1.jpg" alt="Baal">
+          <figcaption>my pretty boy ♡</figcaption>
+        </figure>
+        <figure class="photo-card tilt-right">
+          <img src="baal-photo-2.jpg" alt="Baal at the gym">
+          <figcaption>still my favourite view ✨</figcaption>
+        </figure>
+      </div>
+
+      <button class="soft-btn" onclick="showLetter()">I have something to tell you 💌</button>
+    </section>
+
+    <section class="letter hidden" id="letter">
+      <div class="letter-paper">
+        <div class="section-tag">02 · from your Mommy</div>
+        <h2>For my Baal,</h2>
+        <p>Happy Boyfriend’s Day to my favourite person in this whole world 🥹🎀❤️‍🩹</p>
+
+        <p>You’re not just my boyfriend, you’re my comfort, my favourite notification, my safest little corner, and one of the most beautiful parts of my life 🫶🏻🌷💌 Every little moment with you means more to me than you probably realise. I love your presence, your voice, your silly little ways, and the way you can make me smile without even trying 🥹💕✨</p>
+
+        <p>I feel so lucky that out of everyone in this world, I get to love you and call you mine 🫧🤍🌙 I hope we keep making countless memories together, laughing over the stupidest things, annoying each other, and loving each other a little more every day 🥰🫶🏻</p>
+
+        <p>You have such a special place in my heart, and honestly, I wouldn’t trade what we have for anything 🥺💗🌸</p>
+
+        <p class="big-line">Happy Boyfriend’s Day, my loveee 🫶🏻🎀💋</p>
+
+        <p>I love you endlessly, today, tomorrow, and in every little moment in between. ♾️❤️‍🩹🌙✨</p>
+
+        <div class="signature">— your Mommy ♡</div>
+      </div>
+
+      <button class="primary-btn final-btn" onclick="revealFinal()">One last thing... 👀</button>
+    </section>
+
+    <section class="final hidden" id="final">
+      <div class="final-card">
+        <div class="giant-heart">♡</div>
+        <div class="section-tag">03 · forever favourite</div>
+        <h2>You're stuck with me, Baal.</h2>
+        <p>Thank you for being you, for making ordinary days feel special, and for giving me so many little moments to smile about.</p>
+        <p class="forever">You + Me = my favourite story. ♡</p>
+        <div class="tiny-note">love, Mommy 🎀</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>made with love & a little bit of chaos ♡</footer>
+
+  <script>
+    function openSurprise() {
+      document.getElementById("surprise").classList.remove("hidden");
+      setTimeout(() => document.getElementById("surprise").scrollIntoView({behavior:"smooth"}), 80);
+      burstHearts(18);
+    }
+
+    function showLetter() {
+      document.getElementById("letter").classList.remove("hidden");
+      setTimeout(() => document.getElementById("letter").scrollIntoView({behavior:"smooth"}), 80);
+      burstHearts(12);
+    }
+
+    function revealFinal() {
+      document.getElementById("final").classList.remove("hidden");
+      setTimeout(() => document.getElementById("final").scrollIntoView({behavior:"smooth"}), 80);
+      burstHearts(30);
+    }
+
+    function burstHearts(count) {
+      const container = document.querySelector(".hearts");
+      for (let i = 0; i < count; i++) {
+        const h = document.createElement("span");
+        h.textContent = ["♡","♥","✦","✧"][Math.floor(Math.random()*4)];
+        h.style.left = (20 + Math.random()*60) + "vw";
+        h.style.top = (45 + Math.random()*20) + "vh";
+        h.style.animationDuration = (1.8 + Math.random()*1.8) + "s";
+        h.style.fontSize = (14 + Math.random()*20) + "px";
+        container.appendChild(h);
+        setTimeout(() => h.remove(), 4000);
+      }
+    }
+  </script>
+</body>
+</html>
